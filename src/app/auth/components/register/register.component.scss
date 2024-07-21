@@ -1,0 +1,22 @@
+#register {
+  background-image: linear-gradient(to right top,
+  rgba(16, 130, 39, 0.6) 15%,
+    rgba(0, 0, 0, 0.6) 75%
+  ),url(../../../../assets/images/main_bg.png);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-upload {
+  font-size:60px;
+  padding-bottom: 5px;
+}
+
+.rounded_img {
+  border-radius: 50%;
+}

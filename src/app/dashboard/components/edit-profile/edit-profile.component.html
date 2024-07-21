@@ -1,0 +1,37 @@
+<section class="mt-5 px-5">
+  <div class="bg_gray d-flex justify-content-between align-items-center">
+    <div class="px-4">
+      <h5 class="">Name : <span class="text-main h3">{{userName}}</span></h5>
+      <h5 class="pt-3">Role : <span class="text-main h3 ">{{roleInSystem}}</span></h5>
+    </div>
+    <div class=" text-end ">
+      <img [src]="imagePath?completImage+imagePath:notFoundRecipes" class="w_UserImage rounded-circle UserImage"
+        alt="user Image">
+    </div>
+
+  </div>
+  <!-- ahmed -->
+  <div id="fillRecipe" class="row justify-content-between align-items-center py-3">
+    <div class=" pt-4">
+      <div class="d-flex justify-content-between ">
+        <h5>country : <span class="h3 text-main">{{country}}</span></h5>
+        <h5>email : <span class="h3 text-main">{{email}}</span></h5>
+        <h5>phone Number : <span class="h3 text-main">{{phoneNumber}}</span></h5>
+      </div>
+      <div class="d-flex justify-content-between py-4">
+        <h5>creation Date : <span class="h3 text-main">{{creationDate | date}}</span></h5>
+        <h5>modification Date : <span class="h3 text-main">{{modificationDate | date}}</span></h5>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="d-flex justify-content-center mt-5">
+
+    <button (click)="editeProfile()" class="border border-success border-3 text-success bg-white font_text">
+      <span class="">Edit Profile</span>
+      <i class="fa-solid fa-edit px-2 text-success"></i>
+    </button>
+  </div>
+
+</section>

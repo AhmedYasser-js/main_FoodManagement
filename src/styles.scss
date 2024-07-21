@@ -1,0 +1,287 @@
+
+
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$recipes-primary: mat.define-palette(mat.$green-palette);
+$recipes-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$recipes-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$recipes-theme: mat.define-light-theme((
+  color: (
+    primary: $recipes-primary,
+    accent: $recipes-accent,
+    warn: $recipes-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($recipes-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import"~animate.css/animate.min.css";
+//*LINK -  Main text
+
+.text-main{
+  color: #009247 !important;
+}
+
+.text-second{
+  color: #494949 !important;
+}
+.text-greyLight{
+  color: #8391A1 !important;
+}
+.text-darkgrey{
+  color:#1F263E !important;
+}
+.text-red{
+  color: rgb(243, 61, 61) !important;
+}
+
+//*LINK -  Main background color
+
+.bg-main {
+  background-color: #009247 !important;
+}
+
+.by-gray1 {
+  background-color: #f0f0f0 !important;
+}
+
+.bg-custom-dark {
+  background-color: #3a3a3d !important;
+}
+
+.bg-darkgrey{
+  background-color:#1F263E !important;
+}
+
+// *ANCHOR - Auth form
+
+.auth-form {
+  background-color: #fff;
+  // width: 45%;
+  border-radius: 16px;
+
+  h2 {
+  font-size: 25px;
+  color: #494949;
+  }
+
+  p {
+  color: #494949;
+  }
+
+  i{
+  color: #8491a1;
+  }
+}
+
+.y-line {
+  width: 2px;
+  height: 25px;
+  background-color: #000000;
+}
+
+.input-group-text {
+  border-right: none;
+}
+
+// .input-group-text .icon {
+//   border-right:
+// }
+
+.form-control {
+  background-color: #f8f9fa;
+  border-left: none;
+  // border-right: none;
+}
+// .Password {
+// display: block;
+//       width: 73%;
+//       padding: .375rem .75rem;
+//       font-size: 1rem;
+//       line-height: 1.5;
+//       color: #495057;
+//       background-color: #f8f9fa;
+//       background-clip: padding-box;
+//       border: 1px solid #ced4da;
+//       border-radius: .25rem;
+//       transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+// }
+
+.ayes_icon {
+  background-color: #f8f9fa;
+}
+
+.form-select:focus,
+.form-control:focus{
+  border-color: #009247;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(0 146 71 / 21%);
+}
+
+.ayes_icon {
+  border: solid 1px #dee2e6;
+  border-left: none;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+
+  &.main {
+    background-color: #4aa35a;
+    color: #fff;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  &.btn-outline-main {
+    background-color: transparent;
+    border: 2px solid #4aa35a;
+    color: #4aa35a;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  &.btn-outline-main:hover {
+    background-color: #4aa35a;
+    color: #fff;
+    opacity: 0.9;
+  }
+
+  &.second {
+    background-color: red;
+    color: #fff;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &:disabled {
+    background-color: rgba(74, 163, 90,.4) ;
+    color: rgba(0,0, 0) ;
+    cursor: not-allowed;
+  }
+
+}
+
+a{
+  cursor: pointer;
+}
+// &ANCHOR - End Auth form
+
+
+.myPointer {
+cursor: pointer;
+}
+
+
+
+// !!!!!!!!!!!!!!111
+
+.mat-mdc-icon-button.mat-mdc-button-base {
+  width: 28px;
+  height: 20px;
+  padding: 0px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+// *SECTION ( Category and Recipes Style )
+
+#global_bg_image {
+  background-image: url('./src/assets/images/headerhome.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #009247;
+  border-radius: 15px;
+  margin-top: 1rem;
+  padding-inline: 25px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.text-name {
+  color: #DFE0E0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+p {
+font-weight: 400;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); // Adjust the distance to move up
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.categoryAvatar {
+
+  animation: moveUpDown 2.5s ease-in-out infinite; // Adjust duration and timing function as needed
+}
+
+#fillRecipe {
+background-color: #f0ffef;
+border-radius: 15px;
+margin-top: 1rem;
+padding:  1rem;
+}
+
+
+
+.thTable {
+  font-size:18px ;
+  p{
+      font-weight: 600;
+
+    }
+}
+
+
+// *SECTION head table
+
+.w-image {
+  width: 60px;
+}
+
+
+

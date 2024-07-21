@@ -1,0 +1,27 @@
+<section class="p-4 px-5">
+  <div class="d-flex flex-row-reverse">
+    <a (click)="onNoClick()" class="myPointer"><i class="fa-regular fa-circle-xmark text-danger fa-2x"></i></a>
+
+  </div>
+  <div class=" d-flex justify-content-center align-items-center flex-column">
+    <img src="./assets/images/avatarThinkingWoman.svg" alt="">
+
+    <h2 ngClass="data.name.length==0?visually-hidden:d-block">
+      <p>are you sure you want</p> Delete (<span class="text-main">{{data.name}}
+        {{data.userName}}
+      </span>) ?
+    </h2>
+
+    <p> if you are sure just click on delete it</p>
+
+    <p class=" d-block"></p>
+  </div>
+  <div class="horizontal-line "></div>
+  <div class="d-flex flex-row-reverse">
+
+    <button [mat-dialog-close]="data.id" type="submit" class="btn btn-outline-danger my-2 ">
+      Delete this item
+    </button>
+
+  </div>
+</section>

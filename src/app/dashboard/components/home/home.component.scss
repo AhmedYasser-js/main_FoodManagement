@@ -1,0 +1,99 @@
+#home {
+  background-image: url('./assets/images/homeAvatr.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #009247;
+  border-radius: 15px;
+  margin-top: 1rem;
+  padding-inline: 25px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.text-name {
+  color: #DFE0E0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+p {
+font-weight: 400;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); // Adjust the distance to move up
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.homeAvatar {
+  animation: moveUpDown 2.5s ease-in-out infinite; // Adjust duration and timing function as needed
+}
+
+#fillRecipe {
+background-color: #f0ffef;
+border-radius: 15px;
+margin-top: 1rem;
+padding:  1rem;
+}
+
+.height_home {
+  height: 50vh;
+}
+
+.w_60 {
+  width: 60%;
+}
+
+.fontZise {
+  font-size: 37px;
+}
+
+.modules {
+  border-radius: 30px;
+  border: dashed 3px;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  background-color: rgba(104, 201, 170, 0.3); /* Default background color */
+}
+
+@keyframes hoverAnimation {
+  0% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+  50% {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1.05) rotate(-3deg);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.modules:hover {
+  animation: hoverAnimation 0.5s ease-in-out forwards;
+  background-color: rgba(104, 201, 170, 0.6); /* Change background color */
+}
+
+.modules1 {
+  background-color: rgba(104, 201, 170, 0.402);
+}
+
+.modules2 {
+  background-color: rgba(104, 201, 170, 0.5);
+}
+
+.modules3 {
+  background-color: rgba(104, 201, 190, 0.4);
+}

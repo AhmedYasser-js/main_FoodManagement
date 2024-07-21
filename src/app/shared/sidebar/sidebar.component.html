@@ -1,0 +1,19 @@
+<section class="bg-darkgrey sticky">
+  <div class="py-5 px-2 text-center">
+    <img src="./assets/images/logo-icon.png" alt="" class="w-50 myPointer" (click)="isOpened=!isOpened">
+  </div>
+
+  <div class="mt-5">
+    <ul>
+      <ng-container *ngFor="let item of Menu">
+      <li *ngIf="item.isActive">
+        <a [routerLink]="item.link" routerLinkActive="bg-main-transparent">
+          <span  [ngClass]="{'ps-4': !isOpened}"><i [class]="item.icone"></i></span>
+          <span class=" text-capitalize" *ngIf="isOpened">{{item.text}}</span>
+        </a>
+      </li>
+    </ng-container>
+    </ul>
+  </div>
+</section>
+

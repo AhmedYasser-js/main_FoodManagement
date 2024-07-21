@@ -1,0 +1,28 @@
+<section class="p-4">
+  <div class="d-flex flex-row-reverse">
+    <a (click)="onNoClick()" class="myPointer"><i class="fa-regular fa-circle-xmark text-danger fa-2x"></i></a>
+
+  </div>
+  <div class=" d-flex justify-content-center align-items-center flex-column">
+    <!-- <img src="../../../assets/images/avatarThinkingWoman.svg" alt=""> -->
+    <img [src]="data.imagePath?.length ? imagePath + data.imagePath : notFoundRecipes" class="w-50" alt="Recipe Image">
+
+    <h3>Rrcipe name : (<span class="text-main">{{data.name?data.name:'Rrcipe'}} </span>)</h3>
+    <p class="h4 ">Rrcipe Description : (<span class="text-main">{{data.description?data.description:'No Description'}}
+      </span>)
+    </p>
+    <p class="h4 ">Rrcipe Price : (<span class="text-main">{{data.price}} </span>)</p>
+  </div>
+  <div class="horizontal-line "></div>
+  <div class="d-flex flex-row-reverse">
+
+    <button [mat-dialog-close]="data.id" type="submit" class="btn btn-outline-main my-2 ">
+      Added to favorite Item <i class="fa-solid fa-heart text-danger"></i>
+    </button> 
+
+    <!-- <button class="btn btn-outline-danger my-2 ">
+      Added to favorite Item <i class="fa-solid fa-heart"></i>
+    </button> -->
+
+  </div>
+</section>

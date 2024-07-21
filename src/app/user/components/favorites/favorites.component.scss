@@ -1,0 +1,70 @@
+.item {
+  border-radius: 15px ;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Adjust the values as needed */
+  transition: box-shadow 0.3s ease;
+  &::hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1); /* Adjust hover effect */
+  }
+}
+
+.UserImage {
+  border-radius: 15px 15px 35px  35px;
+  height:200px;
+}
+
+// *SECTION
+.delete_icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 3px #1f263e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -55px;
+  top: 20px;
+  transition: right .6s, color 1s;
+}
+
+.delete_icon:hover {
+  background-color: #1f263e;
+  border-color: #fff;
+  color: #fff;
+}
+
+.delete_icon i {
+  scale: 1.2;
+}
+
+.delete_icon:hover i {
+  transform: translateX(3);
+}
+
+.item:hover .delete_icon{
+  right: 20px;
+}
+// *SECTION
+
+
+.main_delete_icon {
+  border-radius: 8px;
+  background-color: #fff;
+  border: solid 3px #1f263e;
+  padding: 1px 3px;
+  transition: right .6s, color 1s;
+  margin-inline:4px ;
+}
+
+.main_delete_icon:hover {
+  background-color: #1f263e;
+  border-color: #fff;
+  color: #fff;
+}
+
+.main_delete_icon i {
+  scale: .8;
+}
+

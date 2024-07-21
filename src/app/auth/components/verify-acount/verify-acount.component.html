@@ -1,0 +1,52 @@
+<!-- (ngSubmit)="handleForm(verifyCount)" -->
+<section class="px-5 py-3 ">
+  <div class="d-flex flex-row-reverse">
+    <a (click)="onNoClick()" class="myPointer"><i class="fa-regular fa-circle-xmark text-danger fa-2x"></i></a>
+  </div>
+  <div class="text-center">
+    <img src="./assets/images/logo.svg" alt="" class="my-4">
+  </div>
+  <h3 class="py-2">Verify Your Account</h3>
+  <mat-dialog-content>
+    <!-- (ngSubmit)="onVerifyAcount(verifyCount)" -->
+    <form [formGroup]="verifyCount">
+      <div class="form-item">
+        <div class="input-group mb-3 custom-input">
+          <span class="input-group-text px-3 py-3" id="basic-addon1"><i class="fa-solid fa-at"></i></span>
+          <div class="y-line my-auto"></div>
+          <input type="email" class="form-control rounded-end py-1" placeholder="Enter your email" aria-label="email"
+            aria-describedby="basic-addon1" formControlName="email">
+        </div>
+        <div *ngIf="verifyCount.get('email')?.errors && verifyCount.get('email')?.touched"
+          class="text-red m-0 mx-auto p-0 text-start">
+          <span class="text-red" *ngIf="verifyCount.get('email')?.getError('required')">email is Required</span> <br>
+          <span class="text-red" *ngIf="verifyCount.get('email')?.getError('email')">email isn't Validator</span>
+        </div>
+      </div>
+
+
+      <div class="form-item">
+        <div class="input-group mb-3 custom-input">
+          <span class="input-group-text px-3 py-3" id="basic-addon1"><i class="fa-solid fa-message"></i></span>
+          <div class="y-line my-auto"></div>
+          <input type="code" class="form-control rounded-end py-1" placeholder="Enter your code" aria-label="code"
+            aria-describedby="basic-addon1" formControlName="code">
+        </div>
+        <div *ngIf="verifyCount.get('code')?.errors && verifyCount.get('code')?.touched"
+          class="text-red m-0 mx-auto p-0 text-start">
+          <span class="text-red" *ngIf="verifyCount.get('code')?.getError('required')">code is Required</span> <br>
+          <span class="text-red p-0 block" *ngIf="verifyCount.get('code')?.getError('minlength')">Min length
+            4</span>
+        </div>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions class=" justify-content-around">
+    <!-- <button mat-button (click)="onNoClick()">close</button> -->
+
+    <button mat-button [mat-dialog-close]="verifyCount.value" cdkFocusInitial [disabled]="verifyCount.invalid"
+      class="main w-100">Verify</button>
+  </mat-dialog-actions>
+
+
+</section>

@@ -1,0 +1,113 @@
+<section id="fillRecipe">
+  <div class="row justify-content-between align-items-center">
+    <div class="col-8 ">
+      <h3>Fill the <span class="text-main">Recipes</span>!</h3>
+      <p>you can now fill the meals easily using the table and form , click here and sill it with the table !</p>
+    </div>
+    <div class="col-4 text-end">
+      <button class="main" (click)="goToRecipe()">
+        <span>Fill Recipes </span>
+        <span><i class="fa-solid fa-arrow-right"></i></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit(recipeForm)">
+    <div class="row py-5">
+      <div class="col-9 mx-auto">
+        <div class="input-group mb-3 custom-input">
+          <span class="input-group-text px-3 py-3" id="basic-addon1"><i class="fa-solid fa-bowl-food"></i></span>
+          <div class="y-line my-auto"></div>
+          <input type="text" class="form-control rounded-end py-1" placeholder="Recipe Name" aria-label="name"
+            aria-describedby="basic-addon1" formControlName="name">
+        </div>
+        <div *ngIf="recipeForm.get('name')?.errors && recipeForm.get('name')?.touched"
+          class="text-red m-0 mx-auto p-0 text-start block">
+          <span class="text-red p-0 block" *ngIf="recipeForm.get('name')?.getError('required')">Recipe Name is
+            Required</span><br>
+          <span class="text-red p-0 block" *ngIf="recipeForm.get('name')?.getError('minlength')">Min length
+            3</span><br>
+          <span class="text-red p-0 block" *ngIf="recipeForm.get('name')?.getError('maxlength')">Max length
+            20</span>
+        </div>
+      </div>
+      <div class="col-9 mx-auto d-flex gap-2">
+
+        <mat-form-field appearance="outline" class="w-50">
+          <mat-label>Tags</mat-label>
+          <mat-select formControlName="tagId">
+            <mat-option>All</mat-option>
+            <mat-option *ngFor="let item of tags" [value]="item.id">{{item.name}}</mat-option>
+          </mat-select>
+          <mat-icon matSuffix color="primary">sell</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-50">
+          <mat-label>Categories</mat-label>
+          <mat-select formControlName="categoriesIds" multiple>
+            <mat-option>All</mat-option>
+            <mat-option *ngFor="let item of Categories" [value]="item.id">{{item.name}}</mat-option>
+          </mat-select>
+          <mat-icon matSuffix color="primary">fastfood</mat-icon>
+        </mat-form-field>
+
+      </div>
+      <div class="col-9 mx-auto">
+        <div class="input-group mb-3 custom-input">
+          <span class="input-group-text px-3 py-3" id="basic-addon1"><i class="fa-solid fa-money-bill"></i></span>
+          <div class="y-line my-auto"></div>
+          <input type="number" class="form-control rounded-end py-1" placeholder="Recipe price" aria-label="price"
+            aria-describedby="basic-addon1" formControlName="price">
+          <span class="ayes_icon rounded px-3 py-3" id="basic-addon1" role="button">
+            EGP
+          </span>
+        </div>
+        <div *ngIf="recipeForm.get('price')?.errors && recipeForm.get('price')?.touched"
+          class="text-red m-0 mx-auto p-0 text-start block">
+          <span class="text-red p-0 block" *ngIf="recipeForm.get('price')?.getError('required')">price is
+            Required</span>
+        </div>
+      </div>
+      <div class="col-9 mx-auto">
+        <div class="input-group mb-3 custom-input">
+          <span class="input-group-text px-3 py-3" id="basic-addon1"><i class="fa-solid fa-pen"></i></span>
+          <div class="y-line my-auto"></div>
+
+          <textarea cols="30" rows="5" type="text" class="form-control rounded-end py-1"
+            placeholder="Recipe description" aria-label="description" aria-describedby="basic-addon1"
+            formControlName="description"></textarea>
+          <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+        </div>
+        <div *ngIf="recipeForm.get('description')?.errors && recipeForm.get('description')?.touched"
+          class="text-red m-0 mx-auto p-0 text-start block">
+          <span class="text-red p-0 block" *ngIf="recipeForm.get('description')?.getError('required')">description is
+            Required</span>
+        </div>
+      </div>
+      <div class="justify-content-center align-items-center col-9 mx-auto">
+        <ngx-dropzone (change)="onSelect($event)" class="col-12">
+          <ngx-dropzone-label>
+            <i class="fa-solid fa-upload"></i>
+            <p>
+              Drag & Drop or Choose a Item Image to Upload
+            </p>
+          </ngx-dropzone-label>
+          <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" class="">
+            <ngx-dropzone-label></ngx-dropzone-label>
+          </ngx-dropzone-image-preview>
+        </ngx-dropzone>
+      </div>
+      <div class="horizontal-line col-10 mx-auto my-4"></div>
+      <div class="col-9 mx-auto d-flex justify-content-end">
+        <div>
+          <button class="main mx-4 btn-outline-main px-5" (click)="goToRecipe()">cancel</button>
+          <button class="main  px-4">save</button>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</section>

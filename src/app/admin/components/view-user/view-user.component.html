@@ -1,0 +1,61 @@
+<section id="fillRecipe" class="mt-5 px-5">
+
+  <div class="row justify-content-between align-items-center ">
+    <div class=" pt-4">
+
+      <div class="d-flex justify-content-between">
+        <h5 class="">User Name : <span class="text-main h3">{{userName}}</span></h5>
+        <h5>User Role : <span class="text-main h3">{{roleInSystem}}</span></h5>
+        <h5>country : <span class="h3 text-main">{{country}}</span></h5>
+      </div>
+      <div class="d-flex justify-content-between mt-5">
+
+        <h5>email : <span class="h3 text-main">{{email}}</span></h5>
+        <h5>phoneNumber : <span class="h3 text-main">{{phoneNumber}}</span></h5>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="bg_gray ">
+  <div class="text-center ">
+    <img [src]="imagePath.length?completImage+imagePath:notFoundRecipes" class="w_UserImage rounded-circle UserImage"
+      alt="user Image">
+  </div>
+</section>
+
+
+<!--
+  this.userName = response.userName;
+        *this.country = response.country;
+        this.roleInSystem = response.group.name;
+        *this.email = response.email;
+        this.imagePath = response.imagePath;
+        *this.phoneNumber = response.phoneNumber;
+ -->
+
+<section class="d-flex justify-content-center mt-5">
+  <!-- <div class="mt-5 mx-3 d-flex justify-content-between">
+    <h5>country : <span class="h3 text-main">{{country}}</span></h5>
+    <h5>email : <span class="h3 text-main">{{email}}</span></h5>
+    <h5>phoneNumber : <span class="h3 text-main">{{phoneNumber}}</span></h5>
+  </div>
+  <div class=" d-flex justify-content-center gap-5 mt-5"> -->
+  <!-- <button (click)="openDeleteUserDialog(userData)" class="border border-danger">
+      <span>Delete</span>
+      <i class="fa-solid fa-trash px-2 text-danger  "></i>
+    </button>
+    <button (click)="goToUsers()" class="border border-danger">
+      <span>Cancel</span>
+      <i class="fa-solid fa-ban px-2 text-danger"></i>
+    </button> -->
+
+  <button (click)="goToUsers()" class="border border-success text-success bg-white ">
+    <span>Go Back To All Users</span>
+    <i class="fa-solid fa-users px-2 text-success"></i>
+    <!-- <i class="fa-solid fa-ban px-2 text-success"></i> -->
+  </button>
+  <!-- </div> -->
+</section>

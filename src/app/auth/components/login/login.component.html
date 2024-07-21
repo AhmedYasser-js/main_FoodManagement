@@ -1,0 +1,73 @@
+<section id="login">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="auth-form py-5 col-lg-7 col-md-11 col-sm-10">
+        <div class="text-center">
+          <img src="./assets/images/logo.svg" alt="">
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="handleForm(loginForm)" class="px-5">
+          <h2>Log In</h2>
+          <p>
+            Welcome Back! Pleace enter your details
+          </p>
+          <div class="form-item">
+            <div class="input-group mb-3 custom-input">
+              <span class="input-group-text px-3 py-3" id="basic-addon1"><i class="fa-solid fa-at"></i></span>
+              <div class="y-line my-auto"></div>
+              <input type="email" class="form-control rounded-end py-1" placeholder="Enter your email"
+                aria-label="email" aria-describedby="basic-addon1" formControlName="email">
+            </div>
+            <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched"
+              class="text-red m-0 mx-auto p-0 text-start">
+              <span class="text-red" *ngIf="loginForm.get('email')?.getError('required')">email is Required</span> <br>
+              <span class="text-red" *ngIf="loginForm.get('email')?.getError('email')">email isn't Validator</span>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <div class="form-item input-group mb-3">
+              <span class="input-group-text px-3 py-3" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+              <div class="y-line my-auto"></div>
+              <input [type]="password_type" class="form-control py-1  rounded-0 border-end-0"
+                placeholder="Enter your Password" aria-label="Username" aria-describedby="basic-addon1"
+                formControlName="password">
+              <span class="ayes_icon rounded px-3 py-3 rounded-start-0" id="basic-addon1" role="button"
+                (click)="toggleSee()">
+                <i class="fa-regular" [ngClass]="{'fa-eye': see, 'fa-eye-slash': !see}"></i>
+              </span>
+            </div>
+            <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched"
+              class="text-red m-0 mx-auto p-0 text-start block">
+              <span class="text-red p-0 block" *ngIf="loginForm.get('password')?.getError('required')">password is
+                Required</span><br>
+              <span class="text-red p-0 block" *ngIf="loginForm.get('password')?.getError('minlength')">Min length
+                8</span><br>
+              <span class="text-red p-0 block" *ngIf="loginForm.get('password')?.getError('pattern')">must have at least
+                1
+                uppercase
+                letter <br> at least 1 lowercase letter <br> at least 1 digit <br> at least 1 special
+                character</span><br>
+              <span class="text-red p-0 block " *ngIf="loginForm.get('password')?.getError('maxlength')">Max length
+                20</span>
+            </div>
+          </div>
+
+
+          <div class="d-flex justify-content-between align-items-center">
+            <a class="text-second text-decoration-none" role="button" (click)="routToRegister()">Register now?</a>
+            <a role="button" class="text-main my-auto" (click)="openDialog()">
+              forget password?
+            </a>
+          </div>
+
+          <!-- (click)="handleForm(loginForm)" -->
+          <button type="submit" class=" main w-100 mt-3 " [disabled]="loginForm.invalid"> Log in
+            <span *ngIf="isLoading"><i class="fas fa-spin fa-spinner text-white"></i></span> </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>
